@@ -1,0 +1,49 @@
+// Baseline node style
+@NodeStyle {
+  size: 6
+  border-width: 0.6
+  border-color: #1D1D1D
+  shadow-color: #bab8bb
+  shadow-size: 8
+  font-size: 5
+}
+
+// Define style for Movie node
+@NodeStyle HasLabel?(node, "Movie") {
+  label: AsText(Property(node, "title")) 
+  size: AsNumber(Property(node, "count_ratings"))
+  image-url: "https://p7.hiclipart.com/preview/880/974/535/filmmaking-clapperboard-film-studio-computer-icons-action-icon-free-png.jpg"
+}
+
+// Define style for Category node
+@NodeStyle HasLabel?(node, "Category") {
+  label: AsText(Property(node, "name")) 
+  image-url: "https://cdn0.iconfinder.com/data/icons/infographic-orchid-vol-1/256/Colorful_Label-512.png"
+}
+
+// Define style for User node
+@NodeStyle HasLabel?(node, "User") {
+  label: AsText(Property(node, "user_id"))
+  image-url: "https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png"
+}
+
+// Baseline edge style
+@EdgeStyle {
+  color: #850000
+  color-hover: #D2001A
+  color-selected: #D2001A
+  width: 0.35
+  width-hover: 0.9
+  width-selected: 0.9
+  font-size: 3
+}
+
+// Show edge text only if there is a small number of edges in the view
+@EdgeStyle Less(EdgeCount(graph), 30) {
+  label: Type(edge)
+}
+
+// Canvas background color
+@ViewStyle {
+  background-color: #F5F7F8
+}

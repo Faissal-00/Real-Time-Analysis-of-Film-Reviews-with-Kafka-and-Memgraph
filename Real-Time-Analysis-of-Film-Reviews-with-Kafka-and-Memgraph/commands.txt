@@ -1,0 +1,30 @@
+-------------------Docker Run-----------------
+----------------------------------------------
+# Run the images
+docker-compose -f docker-compose.yml up -d
+
+---> Connect to http://localhost:3000/
+
+# Stop the images
+docker-compose -f docker-compose.yml down
+
+----------------------------------------------
+-------Get last changes in Dev Branch---------
+----------------------------------------------
+# get last changes
+git fetch origin
+
+# merge dev to my Branch
+git merge origin/dev
+
+----------------------------------------------
+------------Run the Streaming-----------------
+----------------------------------------------
+# Run the api
+.\api\app.py
+
+# Run the producer
+python .\scripts\Producer.py
+
+# Run the consumer
+python .\scripts\Consumer.py

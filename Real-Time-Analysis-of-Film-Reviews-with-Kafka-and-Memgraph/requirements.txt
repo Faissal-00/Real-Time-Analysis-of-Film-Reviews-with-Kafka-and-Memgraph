@@ -1,0 +1,3 @@
+py2neo
+neo4j
+confluent_kafka
